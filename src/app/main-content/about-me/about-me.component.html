@@ -1,0 +1,13 @@
+<div class="buffer_container"></div>
+<section>
+    <div class="text_wrapper">
+        <h1>About me</h1>
+        <p>Hi, I am a Front-end deverloper based in München, Germany(....)Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut auctor sem non tempus convallis. Integer et justo vitae urna finibus eleifend sit amet porttitor sapien. Donec sollicitudin massa vel lorem vestibulum efficitur.</p>
+        <app-characteristics *ngFor="let entry of entries; let i = index" [icon]="entries[i].icon" [description]="entries[i].description"></app-characteristics>
+    </div>
+    <div class="selfie_container">
+        <img src="/assets/img/face.png" alt="">
+    </div>
+</section>
+<div class="separator_line"></div>
+<img src="/assets/img/shadows/shadow1.png" alt="" class="shadow">

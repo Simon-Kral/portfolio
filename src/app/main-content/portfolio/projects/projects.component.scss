@@ -1,0 +1,63 @@
+@import './../../../../styles.scss';
+
+.project {
+    @include dFlex($g: 12.8rem);
+    margin-top: 20rem;
+    .description_container {
+        .text_wrapper {
+            max-width: 50rem;
+            h3 {
+                font-size: 3.2rem;
+                font-weight: 700;
+                color: #4B47FF;
+            }
+            h4 {
+                font-size: 2.3rem;
+                font-weight: 400;
+                color: #00BEE8;
+            }
+            p {
+                font-size: 1.6rem;
+            }
+        }
+        .button_wrapper {
+            width: 100%;
+            a {
+                font-size: 2.3rem;
+                padding: 1.5rem 3.0rem;
+                border-radius: 1rem;
+                color: whitesmoke;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            :first-child {
+                background-color: #4B47FF;
+            }
+            :nth-child(2) {
+                background-color: transparent;
+                border: 0.1rem solid #00BEE8;
+            }
+        }
+    }
+    .text_right {
+        @include dFlex($fd: column, $g: 3.2rem);
+        .text_wrapper {
+            @include dFlex($fd: column, $ai: flex-start, $g: 1.6rem);
+            text-align: start;
+        }
+        .button_wrapper {
+            @include dFlex($jc: flex-start, $g: 8.6rem);
+        }
+    }
+    .text_left {
+        @include dFlex($fd: column, $g: 3.2rem);
+        .text_wrapper {
+            @include dFlex($fd: column, $ai: flex-end, $g: 1.6rem);
+            text-align: end;
+        }
+        .button_wrapper {
+            @include dFlex($jc: flex-end, $g: 8.6rem);
+        }
+    }
+}

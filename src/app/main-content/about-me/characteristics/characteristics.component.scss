@@ -1,0 +1,13 @@
+@import './../../../../styles.scss';
+
+
+.characteristic_entry {
+    @include dFlex($ai: flex-start, $g: 3.2rem);
+    margin-left: 3.2rem;
+    .img_wrapper {
+        min-width: 5rem;
+    }
+    p {
+        font-size: 1.6rem;
+    }
+}

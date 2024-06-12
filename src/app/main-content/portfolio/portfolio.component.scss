@@ -1,0 +1,46 @@
+@import './../../../styles.scss';
+
+:host {
+    @include dFlex($fd: column);
+    padding-top: 27.8rem;
+}
+.head_wrapper {
+    @include dFlex();
+    width: 100%;
+    margin-bottom: 3.2rem;
+    .portfolio_head {
+        @include dFlex($fd: column);
+        width: fit-content;
+        margin-right: 4.2rem;
+        .headline_wrapper {
+            @include dFlex($g: 4.2rem);
+            .separator_line {
+                width: 11rem;
+                border-radius: 0.2rem;
+            }
+            h1 {
+                font-size: 9rem;
+            }
+        }
+    }
+}
+
+h2 {
+    font-size: 1.6rem;
+    font-weight: 400;
+    transform: translateX(5.5rem);
+}
+
+.portfolio_projects {
+    margin-bottom: 25.6rem;
+}
+
+.buffer_container {
+    flex-grow: 1;
+}
+
+.separator_line {
+    @include separatorLine();
+    min-width: 10rem;
+    flex-grow: 1;
+}

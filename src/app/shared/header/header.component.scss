@@ -1,0 +1,24 @@
+@import './../../../styles.scss';
+
+:host {
+    @include dFlex();
+    width: 100%;
+    z-index: 100;
+}
+    
+header {
+    width: 100%;
+    max-width: 192rem;
+    nav {
+        height: $header_height;
+        padding: 4rem 10rem;
+        @include dFlex($jc: space-between);
+        .back_to_top {
+            height: 3.5rem;
+        }
+        div {
+            display: flex;
+            gap: 3rem;
+        }
+    }
+}

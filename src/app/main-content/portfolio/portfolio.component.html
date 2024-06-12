@@ -1,0 +1,21 @@
+<div class="head_wrapper">
+    <div class="buffer_container"></div>
+    <section class="portfolio_head">
+        <div class="headline_wrapper">
+            <div class="separator_line"></div>
+            <h1>Portfolio</h1>
+        </div>
+    </section>
+    <div class="separator_line"></div>
+</div>
+<h2>Explore a selection of my work here - Interact with projects to see my skills in action.</h2>
+<section class="portfolio_projects">
+    <app-projects
+        *ngFor="let entry of projectList; let i = index"
+        [title]="projectList[i].title"
+        [type]=" projectList[i].type"
+        [description]="projectList[i].description"
+        [img]="projectList[i].img"
+        [i]="i"
+    ></app-projects>
+</section>

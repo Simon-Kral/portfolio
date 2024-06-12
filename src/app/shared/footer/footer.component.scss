@@ -1,0 +1,47 @@
+@import './../../../styles.scss';
+
+:host {
+    @include dFlex($fd: column);
+    width: 100%;
+    z-index: 100;
+    padding-top: 12.8rem;
+}
+
+footer {
+    @include dFlex($fd: column, $ai: flex-start);
+    width: 100%;
+    max-width: 192rem;
+    height: 30rem;
+    padding: 0 10rem;
+    z-index: 100;
+    nav {
+        @include dFlex($jc: space-between);
+        width: 100%;
+        .back_to_top {
+            height: 4.2rem;
+        }
+        .imprint_wrapper {
+            @include dFlex($fd: column, $ai: flex-start);
+        }
+        span {
+            font-size: 2.3rem;
+        }
+        .social_wrapper {
+            a {
+                margin-left: 4.2rem;
+                img {
+                    width: 3rem;
+                }
+            }
+        }
+    }
+    span {
+        font-size: 1.6rem
+    }
+}
+
+.separator_line {
+    @include separatorLine();
+    background-color: #00BEE8;
+    width: 100%;
+}
