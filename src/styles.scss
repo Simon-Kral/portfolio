@@ -63,6 +63,36 @@ a {
     border: 0.3rem solid #ffffff00;
 }
 
+@keyframes jump {
+    0%,
+    50%,
+    75%,
+    100% {
+        transform: translateY(0);
+    }
+    45% {
+        transform: translateY(-2rem);
+    }
+    57% {
+        transform: translateY(-0.7rem);
+    }
+}
+
+@keyframes jump_vertical {
+    0%,
+    33%,
+    66%,
+    100% {
+        transform: translateX(-50%);
+    }
+    61% {
+        transform: translateX(-80%);
+    }
+    73% {
+        transform: translateX(-60%);
+    }
+}
+
 
 @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */

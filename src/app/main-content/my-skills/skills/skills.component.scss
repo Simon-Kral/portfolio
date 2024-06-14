@@ -9,4 +9,7 @@
         line-height: 1.92rem;
         text-align: center;
     }
+    img:hover {
+        animation: jump 1.2s ease infinite;
+    }
 }

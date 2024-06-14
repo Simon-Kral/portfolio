@@ -17,6 +17,7 @@ import { Title } from '@angular/platform-browser';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
+
 export class AppComponent {
   title = 'portfolio';
 
@@ -25,6 +26,6 @@ export class AppComponent {
   }
 
   public setTitle( newTitle: string) {
-    this.titleService.setTitle( 'Simon Kral' );
+    this.titleService.setTitle( newTitle );
   }
 }

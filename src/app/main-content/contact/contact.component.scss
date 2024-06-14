@@ -52,13 +52,17 @@ section {
         color: whitesmoke;
         background-color: transparent;
         margin-bottom: 0.8rem;
+        padding-right: 12%;
         &::placeholder {
             color: whitesmoke;
             opacity: 1;
         }
         &:hover {
             border: 1px solid #1CE6B6;
-            
+        }
+        &:focus-visible {
+            border: 1px solid #4B47FF;
+            outline: none;
         }
     }
     textarea {
@@ -70,10 +74,24 @@ section {
     }
 }
 
+.valid {
+    border: 1px solid #70E61C !important;
+    background-image: url(./../../../assets/img/valid.png);
+    background-position: 95% 1.6rem;
+    background-repeat: no-repeat;
+}
+
+.invalid {
+    border: 1px solid #E61C40 !important;
+    background-image: url(./../../../assets/img/invalid.png);
+    background-position: 95% 1.6rem;
+    background-repeat: no-repeat;
+}
+
 .submit_wrapper {
     @include dFlex();
     margin-bottom: 5rem;
-    input[type=submit] {
+    button[type=submit] {
       background-color: #00BEE8;
       color: white;
       padding: 1.5rem 3rem;
@@ -83,9 +101,12 @@ section {
       cursor: pointer;
       font-size: 1.6rem;
       transition: all 0.1s ease-in-out;
-      &:hover {
+      &:enabled:hover {
         padding: 2rem 4rem;
         margin-bottom: 0rem;
+      }
+      &:disabled {
+        background-color: #B6B6B6;
       }
     }
 }
@@ -93,27 +114,35 @@ section {
 input[type=checkbox] {
     @include wh(3rem, 3rem);
     appearance: none;
-    background-image: url(./../../../assets/img/check_button_unchecked.png);
+    background-image: url(./../../../assets/img/checkbutton_default.png);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
     margin-right: 0.8rem;
-    &:checked {
-        background-image: url(./../../../assets/img/check_button_checked.png);
-    }
     &:hover {
         cursor: pointer;
+        background-image: url(./../../../assets/img/checkbutton_default_hover.png);
     }
+    &:checked {
+        background-image: url(./../../../assets/img/checkbutton_checked.png);
+    }
+    &:checked:hover {
+        background-image: url(./../../../assets/img/checkbutton_checked_hover.png);
+    }
+    
 }
 
 .ckeckbox_wrapper{
-    @include dFlex($jc: flex-start);
+    @include dFlex($jc: flex-start, $ai: flex-start);
     margin-bottom: 3.2rem;
-    label {
+    span {
         font-size: 1.6rem;
         a {
             font-size: 1.6rem;
             color: #4B47FF;
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 }

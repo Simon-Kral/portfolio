@@ -13,35 +13,37 @@
         <div class="form_container">
             <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
                 <div class="form_element_wrapper">
-                    <input [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="Your name" required #name="ngModel">
+                    <input [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="Your name" required #name="ngModel" [ngClass]="{'invalid': !name.valid && name.touched, 'valid': name.valid && name.touched}">
                     @if (!name.valid && name.touched) {
-                        <span class="error_message">Please enter a name</span>
+                        <span class="error_message">Your name is required.</span>
                     }
                 </div>
                 <div class="form_element_wrapper">
-                    <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="Your mail" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" #email="ngModel">
+                    <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="Your mail" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" #email="ngModel" [ngClass]="{'invalid': !email.valid && email.touched, 'valid': email.valid && email.touched}">
                     @if (!email.valid && email.touched) {
-                        <span class="error_message">Please enter a email</span>
+                        <span class="error_message">Your email is required.</span>
                     }
                 </div>
                 <div class="form_element_wrapper">
-                    <textarea [(ngModel)]="contactData.message" minlength="4" id="message" name="message" placeholder="Your message" required #message="ngModel"></textarea>
+                    <textarea [(ngModel)]="contactData.message" minlength="4" id="message" name="message" placeholder="Your message" required #message="ngModel" [ngClass]="{'invalid': !message.valid && message.touched, 'valid': message.valid && message.touched}"></textarea>
                     @if (!message.valid && message.touched) {
-                    <span class="error_message">Please enter a message</span>
+                    <span class="error_message">Your message is empty or too short.</span>
                     }
                 </div>
-                <div class="ckeckbox_wrapper">
-                    <input [(ngModel)]="checkbox" type="checkbox" id="checkbox" name="checkbox" required #checkbox="ngModel">
-                    <label for="checkbox">I've read the <a href="privacy">privacy policy</a> and agree to the processing of my data as outlined.</label>
+                <div class="form_element_wrapper">
+                    <div class="ckeckbox_wrapper">
+                        <input [(ngModel)]="agree" type="checkbox" id="checkbox" name="checkbox" required #checkbox="ngModel">
+                        <span>I've read the <a href="privacy">privacy policy</a> and agree to the processing of my data as outlined.</span>
+                    </div>
                     @if (!checkbox.valid && checkbox.touched) {
-                        <span class="error_message">Please agree to the privacy policy</span>
+                        <span class="error_message">Please agree to the privacy policy.</span>
                     }
-                </div>
+                    </div>
                 <div class="submit_wrapper">
-                    <input type="submit" value="Send message :)">
+                    <button type="submit" [disabled]="!agree">Send message :)</button>
                 </div>
             </form>
-            <a href="#" style="position: relative; left: calc(100% - 4rem);"><img src="/assets/img/go_up.png" alt=""></a>
+            <a href="#" style="position: relative; left: calc(100% - 4rem);"><img src="./assets/img/go_up.png" alt=""></a>
         </div>
     </div>
 </section>

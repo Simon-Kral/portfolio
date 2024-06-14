@@ -6,6 +6,9 @@
     margin-left: 3.2rem;
     .img_wrapper {
         min-width: 5rem;
+        img:hover {
+            animation: jump 1.2s ease infinite;
+        }
     }
     p {
         font-size: 1.6rem;
