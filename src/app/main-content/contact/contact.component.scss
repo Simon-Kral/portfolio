@@ -2,6 +2,7 @@
 
 :host {
     @include dFlex($ai: flex-start);
+    padding-top: 27.8rem;
 }
 
 section {
@@ -53,6 +54,7 @@ section {
         background-color: transparent;
         margin-bottom: 0.8rem;
         padding-right: 12%;
+        transition: all 0.25s;
         &::placeholder {
             color: whitesmoke;
             opacity: 1;
@@ -100,7 +102,7 @@ section {
       margin-bottom: 1rem;
       cursor: pointer;
       font-size: 1.6rem;
-      transition: all 0.1s ease-in-out;
+      transition: all 0.1s;
       &:enabled:hover {
         padding: 2rem 4rem;
         margin-bottom: 0rem;
@@ -119,6 +121,7 @@ input[type=checkbox] {
     background-size: contain;
     background-repeat: no-repeat;
     margin-right: 0.8rem;
+    transition: all 0.1s;
     &:hover {
         cursor: pointer;
         background-image: url(./../../../assets/img/checkbutton_default_hover.png);
@@ -143,6 +146,23 @@ input[type=checkbox] {
             &:hover {
                 text-decoration: underline;
             }
+        }
+    }
+}
+
+.go_up {
+    width: 100%;
+    @include dFlex($jc: flex-end);
+    span {
+        @include dFlex();
+        @include wh(4rem, 4rem);
+        font-size: 2.4rem;
+        border: 0.2rem solid whitesmoke;
+        border-radius: 50%;
+        transition: all 0.1s;
+        &:hover {
+            color: #00BEE8;
+            border: 0.2rem solid #00BEE8;
         }
     }
 }

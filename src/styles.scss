@@ -63,6 +63,44 @@ a {
     border: 0.3rem solid #ffffff00;
 }
 
+.social_button {
+    @include dFlex();
+    margin-left: 4.2rem;
+    img {
+        width: 3rem;
+        &:hover {
+            width: 4rem;
+            margin-right: -1rem;
+            transition: all 0.1s;
+        }
+    }
+}
+
+.underline_animation {
+    position: relative;
+    display: inline-block;
+    &:before {
+        position: absolute;
+        left: 0;
+        bottom: -0.2rem;
+        display: block;
+        width: 0;
+        height: 0.3rem;
+        content: "";
+        background: #4B47FF;
+        border-radius: 0 0.15rem 0.15rem 0;
+        transition: width 0.5s;
+    }
+    &:hover{
+        color: #00BEE8;
+        transition: 0.1s ease-in-out;
+        &:before {
+            width: 5.5rem;
+            transition: width 0.2s;
+        }
+    }
+}
+
 @keyframes jump {
     0%,
     50%,

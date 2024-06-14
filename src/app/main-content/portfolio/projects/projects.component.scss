@@ -27,8 +27,11 @@
                 padding: 1.5rem 3.0rem;
                 border-radius: 1rem;
                 color: whitesmoke;
+                transition: all 0.1s;
                 &:hover {
-                    cursor: pointer;
+                    margin: 0 -1rem -1rem -1rem;
+                    padding: 2rem 4rem;
+                    background-color: #00BEE8;
                 }
             }
             :first-child {
