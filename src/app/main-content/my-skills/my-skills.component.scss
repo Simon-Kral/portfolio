@@ -56,7 +56,8 @@ section {
     @include separatorLine();
     min-width: 10rem;
     flex-grow: 1;
-    transform: translateY(-10rem);
+    position: relative;
+    top: -10rem;
 }
 
 img {

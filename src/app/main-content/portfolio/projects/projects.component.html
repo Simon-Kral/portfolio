@@ -1,6 +1,6 @@
-<div class="project">
+<div class="project" data-aos="fade-up" data-aos-offset='250'>
     @if(this.isEven(i)) {
-        <img src="{{ img }}" alt="">
+        <img src="{{ img }}">
     }
     <div class="description_container" [ngClass]="{'text_right': this.isEven(i), 'text_left': this.isOdd(i)}">
         <div class="text_wrapper">
@@ -14,6 +14,6 @@
         </div>
     </div>
     @if(this.isOdd(i)) {
-        <img src="{{ img }}" alt="">
+        <img src="{{ img }}">
     }
 </div>

@@ -1,16 +1,16 @@
-<div class="separator_line"></div>
+<div class="separator_line" data-aos="fade-right"></div>
 <section>
-    <div class="header_wrapper">
+    <div class="header_wrapper" data-aos="fade-right">
         <h1>Contact</h1>
         <div></div>
     </div>
     <div class="contact_content">
-        <div class="description_container">
+        <div class="description_container" data-aos="fade-right">
             <h2>Got a Problem to solve?</h2>
             <p>Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.</p>
             <p>Need a Frontend developer? <b>Contact me!</b></p>
         </div>
-        <div class="form_container">
+        <div class="form_container" data-aos="fade-left">
             <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
                 <div class="form_element_wrapper">
                     <input [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="Your name" required #name="ngModel" [ngClass]="{'invalid': !name.valid && name.touched, 'valid': name.valid && name.touched}">
