@@ -4,6 +4,9 @@
     @include dFlex();
     width: 100%;
     z-index: 100;
+    position: sticky;
+    top: 0;
+    background-color: $dark_blue;
 }
     
 header {
