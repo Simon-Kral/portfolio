@@ -1,20 +1,20 @@
 <div class="head_wrapper">
     <div class="buffer_container"></div>
-    <section class="portfolio_head" data-aos="fade-left">
+    <section class="portfolio_head" data-aos="fade-right">
         <div class="headline_wrapper">
             <div class="separator_line"></div>
             <h1>Portfolio</h1>
         </div>
     </section>
-    <div class="separator_line" data-aos="fade-left"></div>
+    <div class="separator_line"></div>
 </div>
-<h2>Explore a selection of my work here - Interact with projects to see my skills in action.</h2>
+<h2>{{ 'portfolio.description' | translate }}</h2>
 <section>
     <app-projects
         *ngFor="let entry of projectList; let i = index"
         [title]="projectList[i].title"
-        [type]=" projectList[i].type"
-        [description]="projectList[i].description"
+        [path]="projectList[i].path"
+        [type]="projectList[i].type"
         [img]="projectList[i].img"
         [url]="projectList[i].url"
         [github]="projectList[i].github"

@@ -1,11 +1,14 @@
-import { NgClass } from '@angular/common';
+import { NgClass, NgStyle } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
   imports: [
-    NgClass
+    NgClass,
+    TranslateModule,
+    NgStyle
   ],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
@@ -13,6 +16,7 @@ import { Component, Input } from '@angular/core';
 export class ProjectsComponent {
   @Input() i: number = 0;
   @Input() title: string = '';
+  @Input() path: string = '';
   @Input() type: string = '';
   @Input() description: string = '';
   @Input() img: string = '';
@@ -27,4 +31,9 @@ export class ProjectsComponent {
  isOdd(i: number) {
     return Math.abs(i % 2) == 1;
  }
+
+ generatePath(path: string) {
+   return `portfolio.projects.${path}`;
+ }
+
 }

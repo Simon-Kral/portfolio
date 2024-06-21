@@ -2,22 +2,26 @@
 
 :host {
     @include dFlex($fd: column, $jc: space-between);
-    height: calc(100vh - $header_height);
+    height: calc(95vh - $header_height);
 }
 
 .aot_main {
     @include dFlex();
+    position: relative;
 }
 
 .selfie_container {
-    background-image: url('./../../../assets/img/shadows/shadow5.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -15;
+    position: relative;
     img {
-        @include wh(42rem, auto);
-        z-index: -20;
+        position: inherit;
+        z-index: 2;
+        max-height: calc(85vh - $header_height - 6.8rem);
+    }
+    .shadow {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 
@@ -26,6 +30,7 @@
     flex-direction: column;
     margin-left: -5rem;
     margin-bottom: 16rem;
+    z-index: 6;
     .healine_wrapper {
         @include dFlex();
         h1 {
@@ -36,78 +41,55 @@
         }
         h2 {
             font-size: 5.8rem;
-            color: #4B47FF;
+            color: $purple;
             font-weight: 400;
             line-height: 6.96rem;
             text-wrap: nowrap;
         }
         h3 {
             font-size: 6.4rem;
+            writing-mode: vertical-rl;
+            margin-right: 1.6rem;
             font-weight: 400;
-            letter-spacing: 0.3rem;
-            rotate: -90deg;
+            rotate: 180deg;
             line-height: 7.68rem;
             text-wrap: nowrap;
         }
     }
     a {
-        font-size: 2.3rem;
+        font-size: 23px;
         color: white;
-        background-color: #00BEE8;
+        background-color: $light_blue;
         border: none;
-        padding: 1.5rem 3rem;
-        border-radius: 1rem;
+        padding: 15px 30px;
+        border-radius: 10px;
         cursor: pointer;
-        transition: all 0.1s ease-in-out;
+        transition: all 0.1s;
         &:hover {
-            margin-bottom: -1rem;
-            background-color: #4B47FF;
-            padding: 2rem 4rem;
+            margin-bottom: -10px;
+            background-color: $purple;
+            padding: 20px 40px;
         }
     }
-}
 
-.frame {
-    width: 100%;
-    height: 107.9rem;
-    position: absolute;
-    top: 85%;
-    z-index: -15;
-    img{
-        transform: translateY(-39%);
-        width: 100%;
-        height: 1079px;
-    }
+
 }
 
 .nav_wrapper {
     @include dFlex($jc: flex-start);
     width: 100%;
     flex-grow: 1;
+    z-index: 6;
     .separator_line {
         @include separatorLine();
-        min-width: 10rem;
-        border-radius: 0 0.2rem 0.2rem 0;
-        flex-grow: 1;
+        border-radius: 0 2px 2px 0;
     }
     .aot_contact {
         @include dFlex($jc: space-between);
         max-width: 144rem;
-        nav {
-            @include dFlex();
-            a {
-                @include dFlex();
-                margin-left: 4.2rem;
-                img {
-                    width: 3rem;
-                    &:hover {
-                        width: 4rem;
-                        margin-right: -1rem;
-                        transition: all 0.1s;
-                    }
-                }
+        nav > .social_button > img:hover {
+            margin-top: -10px;
             }
-        }
         .rotate {
             rotate: 90deg;
             font-size: 2.3rem;
@@ -115,21 +97,117 @@
             animation: jump_vertical 2s ease infinite;
         }
     }
-    .buffer_container {
-        flex-grow: 1;
+}
+
+.frame {
+    width: 100vw;
+    height: 107.9rem;
+    position: absolute;
+    top: 90%;
+    z-index: 2;
+    img{
+        position: relative;
+        transform: translateY(-39%);
+        width: 100%;
+        height: 1079px;
     }
 }
 
-@media only screen and (min-height: 1000px) {
+.german {
+    font-size: 4.6rem !important;
+    letter-spacing: 0 !important;
+}
+
+@media screen and (max-width: 1000px) {
+
+    :host > .buffer_container {
+        display: none;
+    }
+
     .aot_main {
-        @include dFlex($jc: space-around);
-        flex-grow: 1;
+        @include dFlex($fd: column, $g: 6.4rem)
     }
-    .nav_wrapper {
-        max-height: 15%;
-    }
+
     .frame {
-        position: absolute;
-        top: 62%;
+        height: calc(107.9rem / 2);
+        top: 65%;
+        img{
+            height: calc(107.9rem / 2);
+        }
+    }
+
+    .selfie_container > img {
+        max-height: calc(65vh - $header_height - 6.8rem);
+    }
+
+    .i_am_container {
+        margin-bottom: 0;
+        margin-left: 0;
+        gap: 2.4rem;
+    }
+
+    .nav_wrapper {
+        flex-grow: 2;
+    }
+}
+
+@media screen and (max-width: 850px) {
+
+    .aot_main {
+        @include dFlex($fd: column, $g: 6.4rem)
+    }
+
+    .i_am_container {
+        a:hover {
+            margin: 0 -10px -10px -10px;
+        }
+    }
+
+    .nav_wrapper {
+        .aot_contact {
+        width: auto;
+        justify-content: center;
+        }
+        .separator_line {
+            margin-right: 42px;
+        }
+        .buffer_container {
+            margin-left: 42px;
+        }
+        :first-child {
+            margin-left: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .i_am_container {
+        a {
+            font-size: 16px;
+            padding: 10.5px 21px;
+            border-radius: 7px;
+            &:hover {
+                margin: 0 -7px -7px -7px;
+                padding: 14px 28px;
+            }
+        }
+    }
+
+    .selfie_container {
+        .shadow {
+            max-width: 90vw;
+        }
+    }
+}
+
+@media screen and (max-width: 470px) {
+
+    .frame {
+        top: 70%;
+    }
+
+    .nav_wrapper > .separator_line {
+        min-width: 20px;
     }
 }

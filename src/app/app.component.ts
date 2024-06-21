@@ -6,6 +6,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { Title } from '@angular/platform-browser';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import {TranslateModule, TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +16,7 @@ import 'aos/dist/aos.css';
     RouterOutlet,
     HeaderComponent,
     FooterComponent,
+    TranslateModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -23,9 +25,11 @@ import 'aos/dist/aos.css';
 export class AppComponent implements OnInit {
   title = 'portfolio';
 
-  public constructor(private titleService: Title ) {
+  public constructor(private titleService: Title,translate: TranslateService ) {
     this.setTitle('Simon Kral');
+    translate.setDefaultLang('en');
   }
+  
   ngOnInit(): void {
     AOS.init();
   }

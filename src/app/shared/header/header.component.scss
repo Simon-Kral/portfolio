@@ -3,7 +3,7 @@
 :host {
     @include dFlex();
     width: 100%;
-    z-index: 100;
+    z-index: 10;
     position: sticky;
     top: 0;
     background-color: $dark_blue;
@@ -14,14 +14,86 @@ header {
     max-width: 192rem;
     nav {
         height: $header_height;
-        padding: 4rem 10rem;
+        padding: 40px 100px;
         @include dFlex($jc: space-between);
         .back_to_top {
-            height: 3.5rem;
+            height: 35px;
         }
-        div {
+        .nav_links {
             display: flex;
-            gap: 3rem;
+            gap: 30px;
         }
+    }
+}
+
+.burger_menu {
+    transition: all 0.1s;
+    cursor: pointer;
+    &:hover {
+        filter: invert(58%) sepia(26%) saturate(4014%) hue-rotate(151deg) brightness(98%) contrast(101%);
+    }
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #141D2FEE;
+    height: calc(100vh - $header_height);
+    width: 100vw;
+    z-index: 99;
+    .nav_links {
+        @include dFlex($fd: column, $g: 32px)
+    }
+}
+
+.language_selector {
+    display: flex;
+    gap: 6px;
+    span {
+        font-size: 23px;
+    }
+    a {
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        transition: all 0.1s;
+        &:hover {
+            color: $light_blue;
+        }
+        &:before {
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            display: block;
+            width: 0rem;
+            height: 3px;
+            content: "";
+            background: $purple;
+            border-radius: 0 1.5px 1.5px 0;
+            transition: width 0.5s;
+        }
+    }
+}
+
+.selected_animation {
+    color: $light_blue;
+    transition: 0.1s ease-in-out;
+    &:before {
+        width: 24px !important;
+        transition: width 0.2s;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .showMenu {
+        @include dFlex();
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header > nav {
+        padding: 40px 40px;
     }
 }

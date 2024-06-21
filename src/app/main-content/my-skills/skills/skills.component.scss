@@ -13,3 +13,23 @@
         animation: jump 1.2s ease infinite;
     }
 }
+
+@media screen and (max-width: 1000px) {
+
+    .skill_container {
+        p {
+            font-size: 12px;
+            line-height: normal;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    section {
+        @include dFlex($fd: column, $ai: flex-end, $g: 6.4rem);
+        .text_wrapper > p {
+            font-size: 12px;
+        }
+    }
+}

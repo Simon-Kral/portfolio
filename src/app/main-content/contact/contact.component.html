@@ -1,46 +1,46 @@
 <div class="separator_line" data-aos="fade-right"></div>
 <section>
     <div class="header_wrapper" data-aos="fade-right">
-        <h1>Contact</h1>
+        <h1>{{ 'contact.header' | translate }}</h1>
         <div></div>
     </div>
     <div class="contact_content">
         <div class="description_container" data-aos="fade-right">
-            <h2>Got a Problem to solve?</h2>
-            <p>Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.</p>
-            <p>Need a Frontend developer? <b>Contact me!</b></p>
+            <h2>{{ 'contact.subline' | translate }}</h2>
+            <p>{{ 'contact.description' | translate }}</p>
+            <p>{{ 'contact.subtext' | translate }} <b>{{ 'contact.subtextBold' | translate }}</b></p>
         </div>
-        <div class="form_container" data-aos="fade-left">
+        <div class="form_container" data-aos="fade-up">
             <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
                 <div class="form_element_wrapper">
-                    <input [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="Your name" required #name="ngModel" [ngClass]="{'invalid': !name.valid && name.touched, 'valid': name.valid && name.touched}">
+                    <input [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="{{ 'contact.name' | translate }}" required #name="ngModel" [ngClass]="{'invalid': !name.valid && name.touched, 'valid': name.valid && name.touched}">
                     @if (!name.valid && name.touched) {
-                        <span class="error_message">Your name is required.</span>
+                        <span class="error_message">{{ 'contact.errorName' | translate }}</span>
                     }
                 </div>
                 <div class="form_element_wrapper">
-                    <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="Your mail" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" #email="ngModel" [ngClass]="{'invalid': !email.valid && email.touched, 'valid': email.valid && email.touched}">
+                    <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="{{ 'contact.mail' | translate }}" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" #email="ngModel" [ngClass]="{'invalid': !email.valid && email.touched, 'valid': email.valid && email.touched}">
                     @if (!email.valid && email.touched) {
-                        <span class="error_message">Your email is required.</span>
+                        <span class="error_message">{{ 'contact.errorMail' | translate }}</span>
                     }
                 </div>
                 <div class="form_element_wrapper">
-                    <textarea [(ngModel)]="contactData.message" minlength="4" id="message" name="message" placeholder="Your message" required #message="ngModel" [ngClass]="{'invalid': !message.valid && message.touched, 'valid': message.valid && message.touched}"></textarea>
+                    <textarea [(ngModel)]="contactData.message" minlength="4" id="message" name="message" placeholder="{{ 'contact.message' | translate }}" required #message="ngModel" [ngClass]="{'invalid': !message.valid && message.touched, 'valid': message.valid && message.touched}"></textarea>
                     @if (!message.valid && message.touched) {
-                    <span class="error_message">Your message is empty or too short.</span>
+                    <span class="error_message">{{ 'contact.errorMessage' | translate }}</span>
                     }
                 </div>
                 <div class="form_element_wrapper">
                     <div class="ckeckbox_wrapper">
                         <input [(ngModel)]="agree" type="checkbox" id="checkbox" name="checkbox" required #checkbox="ngModel">
-                        <span>I've read the <a href="privacy">privacy policy</a> and agree to the processing of my data as outlined.</span>
+                        <span>{{ 'contact.privacyText1' | translate }}<a href="privacy">{{ 'contact.privacyLink' | translate }}</a>{{ 'contact.privacyText2' | translate }}</span>
                     </div>
                     @if (!checkbox.valid && checkbox.touched) {
-                        <span class="error_message">Please agree to the privacy policy.</span>
+                        <span class="error_message">{{ 'contact.errorPrivacy' | translate }}</span>
                     }
                     </div>
                 <div class="submit_wrapper">
-                    <button type="submit" [disabled]="!agree">Send message :)</button>
+                    <button type="submit" [disabled]="!agree">{{ 'contact.sendButton' | translate }}</button>
                 </div>
             </form>
             <a href="#" class="go_up"><span>↑</span></a>

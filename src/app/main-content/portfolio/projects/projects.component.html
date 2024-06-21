@@ -1,19 +1,15 @@
 <div class="project" data-aos="fade-up" data-aos-offset='250'>
-    @if(this.isEven(i)) {
-        <img src="{{ img }}">
-    }
+    <img src="{{ img }}" class="img_left" [ngClass]="{'d_none': this.isOdd(i)}">
     <div class="description_container" [ngClass]="{'text_right': this.isEven(i), 'text_left': this.isOdd(i)}">
         <div class="text_wrapper">
             <h3>{{ title }}</h3>
             <h4>{{ type }}</h4>
-            <p>{{ description }}</p>
+            <p>{{ generatePath(path) | translate }}</p>
         </div>
         <div class="button_wrapper">
             <a href="{{ url }}" target="_blank">Live test</a>
             <a href="{{ github }}" target="_blank">Github</a>
         </div>
     </div>
-    @if(this.isOdd(i)) {
-        <img src="{{ img }}">
-    }
+    <img src="{{ img }}" class="img_right" [ngClass]="{'d_none': this.isEven(i)}">
 </div>

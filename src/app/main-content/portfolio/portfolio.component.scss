@@ -3,7 +3,10 @@
 :host {
     @include dFlex($fd: column);
     padding-top: 27.8rem;
+    position: inherit;
+    z-index: 6;
 }
+
 .head_wrapper {
     @include dFlex();
     width: 100%;
@@ -15,8 +18,8 @@
         .headline_wrapper {
             @include dFlex($g: 4.2rem);
             .separator_line {
-                width: 11rem;
-                border-radius: 0.2rem;
+                width: 110px;
+                border-radius: 2px;
             }
             h1 {
                 font-size: 9rem;
@@ -26,17 +29,42 @@
 }
 
 h2 {
-    font-size: 1.6rem;
+    font-size: 16px;
     font-weight: 400;
     transform: translateX(5.5rem);
 }
 
-.buffer_container {
-    flex-grow: 1;
-}
-
 .separator_line {
     @include separatorLine();
-    min-width: 10rem;
-    flex-grow: 1;
+    border-radius: 2px 0 0 2px;
+}
+
+
+@media screen and (max-width: 800px) {
+    h2 {
+        transform: translateX(0);
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .head_wrapper > .portfolio_head > .headline_wrapper > .separator_line {
+        width: 5rem;
+        min-width: 0;
+    }
+    h2 {
+        font-size: 12px;
+    }
+
+    .separator_line {
+        min-width: 20px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    
+    .separator_line {
+        min-width: 50px;
+    }
 }

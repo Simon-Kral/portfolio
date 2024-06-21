@@ -3,8 +3,8 @@
 :host {
     padding-top: 14rem;
     @include dFlex();
-    position: relative;
-    overflow-x: hidden;
+    position: inherit;
+    z-index: 6;
 }
 
 
@@ -13,43 +13,34 @@ section {
     .text_wrapper {
         @include dFlex($fd: column,$ai: flex-start, $g: 3.5rem);
         max-width: 128rem;
-        padding: 0 12.8rem;
+        padding: 0 6.4rem;
         h1 {
             font-size: 9rem;
             line-height: 10.8rem;
             text-wrap: nowrap;
         }
         p {
-            font-size: 1.6rem;
+            font-size: 16px;
         }
     }
     .selfie_container {
         @include dFlex();
         border-radius: 50%;
-        border: 4px solid #00BEE8;
+        border: 4px solid $light_blue;
         img {
             border-radius: 50%;
-            z-index: -1;
             @include wh(45.3rem, 45.3rem);
         }
     }
 }
 
-.buffer_container {
-    flex-grow: 1;
-}
-
 .separator_line {
     @include separatorLine();
-    background-color: #00BEE8;
-    min-width: 10rem;
-    flex-grow: 1;
+    background-color: $light_blue;
 }
 
-.shadow {
-    position: absolute;
-    top: 0;
-    right: -30rem;
-    max-height: 100%;
-    z-index: -2;
+@media screen and (max-width: 600px) {
+    section > .text_wrapper > p {
+        font-size: 12px;
+    }
 }

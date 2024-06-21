@@ -1,12 +1,30 @@
 <header>
     <nav>
-        <a href="#">
+        <a href="#" (click)="handleAnchor()">
             <img src="assets/img/name.png" alt="" class="back_to_top">
         </a>
-        <div>
-            <a href="#about_me" class="underline_animation">About me</a>
-            <a href="#my_skills" class="underline_animation">Skills</a>
+        <div class="nav_links hide_mobile">
+            <a href="#about_me" class="underline_animation">{{ 'header.aboutme' | translate }}</a>
+            <a href="#my_skills" class="underline_animation">{{ 'header.skills' | translate }}</a>
             <a href="#portfolio" class="underline_animation">Portfolio</a>
+            <div class="language_selector">
+                <a [ngClass]="{'selected_animation': languageService.language == 'en'}" (click)="languageService.switchLanguage('en')">EN</a>
+                <span>|</span>
+                <a [ngClass]="{'selected_animation': languageService.language == 'de'}" (click)="languageService.switchLanguage('de')">DE</a></div>
         </div>
+        <a class="burger_menu d_none show_mobile" (click)="mobileMenuIsOpen = !mobileMenuIsOpen">
+            <img src="./../../../assets/img/burger_menu.png" alt="">
+        </a>
     </nav>
 </header>
+<div class="overlay" [ngClass]="{'showMenu': mobileMenuIsOpen}">
+    <div class="nav_links">
+        <a href="#about_me" class="underline_animation" (click)="handleAnchor()">{{ 'header.aboutme' | translate }}</a>
+        <a href="#my_skills" class="underline_animation" (click)="handleAnchor()">{{ 'header.skills' | translate }}</a>
+        <a href="#portfolio" class="underline_animation" (click)="handleAnchor()">Portfolio</a>
+        <div class="language_selector">
+            <a [ngClass]="{'selected_animation': languageService.language == 'en'}" (click)="languageService.switchLanguage('en'); mobileMenuIsOpen = false">EN</a>
+            <span>|</span>
+            <a [ngClass]="{'selected_animation': languageService.language == 'de'}" (click)="languageService.switchLanguage('de'); mobileMenuIsOpen = false">DE</a></div>
+    </div>
+</div>

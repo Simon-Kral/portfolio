@@ -3,11 +3,12 @@
 :host {
     padding-top: 27.8rem;
     @include dFlex();
-    position: relative;
+    position: inherit;
+    z-index: 6;
 }
 
 section {
-    @include dFlex($jc: space-between);
+    @include dFlex($jc: space-between, $g: 7rem);
     .skill_list {
         @include dFlex($jc: flex-start, $g: 8rem 14rem);
         flex-wrap: wrap;
@@ -19,7 +20,7 @@ section {
     .text_wrapper {
         @include dFlex($fd: column, $g: 3.2rem);
         text-align: right;
-        max-width: 50rem;
+        max-width: 55rem;
         margin-right: 4.2rem;
         h1 {
             width: 100%;
@@ -27,44 +28,99 @@ section {
             line-height: 10.8rem;
         }
         p {
-            font-size: 1.6rem;
+            font-size: 16px;
             margin-bottom: 3.2rem;
         }
-        a {
-            font-size: 2.3rem;
-            color: white;
-            background-color: #00BEE8;
-            border: none;
-            padding: 1.5rem 3rem;
-            border-radius: 1rem;
-            cursor: pointer;
-            transition: all 0.1s ease-in-out;
-            &:hover {
-                margin-bottom: -1rem;
-                background-color: #4B47FF;
-                padding: 2rem 4rem;
-            }
-        }
+
     }
 }
 
-.buffer_container {
-    flex-grow: 1;
+a {
+    font-size: 2.3rem;
+    color: white;
+    background-color: $light_blue;
+    border: none;
+    padding: 1.5rem 3rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    &:hover {
+        margin-bottom: -1rem;
+        background-color: $purple;
+        padding: 2rem 4rem;
+    }
 }
 
 .separator_line {
     @include separatorLine();
-    min-width: 10rem;
-    flex-grow: 1;
     position: relative;
     top: -10rem;
+    border-radius: 2px 0 0 2px;
 }
 
-img {
-    position: absolute;
-    top: 60rem;
-    left: -60rem;
-    z-index: -5;
-    rotate: 180deg;
-    transform: scaleX(-1);
+@media screen and (max-width: 850px) {
+
+    :host {
+        @include dFlex($ai: flex-start);
+    }
+
+    section {
+        @include dFlex($fd: column, $ai: flex-end, $g: 64px);
+        .skill_list {
+            order: 2;
+            padding-left: 0;
+            max-width: 100%;
+            justify-content: center;
+        }
+        .text_wrapper {
+            order: 1;
+        }
+    }
+
+    .separator_line {
+        top: 5rem;
+        min-width: 20px;
+    }
+
+    .contact_button {
+        order: 3;
+        width: 100%;
+        display: flex !important;
+        justify-content: center;
+        a {
+            font-size: 23px;
+            padding: 15px 30px;
+            border-radius: 10px;
+            &:hover {
+                margin-bottom: -10px;
+                padding: 20px 40px;
+            }
+        }
+    }
+
+    .buffer_container {
+        min-width: 20px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    section {
+        @include dFlex($fd: column, $ai: flex-end, $g: 6.4rem);
+        .text_wrapper > p {
+            font-size: 12px;
+        }
+    }
+
+    .contact_button {
+        a {
+            font-size: 16px;
+            padding: 10.5px 21px;
+            border-radius: 7px;
+            &:hover {
+                margin: 0 -7px -7px -7px;
+                padding: 14px 28px;
+            }
+        }
+    }
 }

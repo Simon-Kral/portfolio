@@ -1,39 +1,40 @@
+<div class="buffer_container"></div>
 <section class="aot_main">
     <div class="selfie_container">
-       <img src="./assets/img/me.png" alt=""> 
-    </div>
-    <div class="i_am_container">
+        <img src="./assets/img/shadows/shadow5.png" alt="" class="shadow">
+        <img src="./assets/img/me.png" alt=""> 
+    </div>    <div class="i_am_container">
         <div class="healine_wrapper">
-            <h3>I am</h3>
+            <h3 [ngClass]="{'german': languageService.language == 'de'}">{{ 'atf.iam' | translate }}</h3>
             <div>
                 <h1>Simon Kral</h1>
                 <h2>FRONTEND DEVELOPER</h2>
             </div>
         </div>
-        <a href="#contact">Let's talk!</a>
+        <a href="#contact">{{ 'atf.talk' | translate }}</a>
+    </div>
+    <div class="frame">
+        <img src="./assets/img/frames/frame1.png" alt="">
     </div>
 </section>
-<div class="frame">
-    <img src="./assets/img/frames/frame1.png" alt="">
-</div>
 <div class="nav_wrapper">
     <div class="separator_line"></div>
     <section class="aot_contact">
             <nav>
-                <a href="https://github.com/Simon-Kral" target="_blank">
+                <a href="https://github.com/Simon-Kral" target="_blank" class="social_button">
                     <img src="./assets/img/github.png" alt="">
                 </a>
-                <a href="#contact">
+                <a href="#contact" class="social_button">
                     <img src="./assets/img/contact.png" alt="">
                 </a>
-                <a href="https://www.linkedin.com/in/simon-kral-0732a1282/" target="_blank">
+                <a href="https://www.linkedin.com/in/simon-kral-0732a1282/" target="_blank" class="social_button">
                     <img src="./assets/img/linkedIn.png" alt="">
                 </a>
-                <a href="mailto:simonkral92@googlemail.com" class="underline_animation">
+                <a href="mailto:simonkral92@googlemail.com" class="underline_animation social_button hide_mobile">
                     <p>simonkral92&#64;gmail.com</p>
                 </a>
             </nav>
-            <p class="rotate">Scroll down! →</p>
+            <p class="rotate hide_mobile">Scroll down! →</p>
     </section>
     <div class="buffer_container"></div>
 </div>

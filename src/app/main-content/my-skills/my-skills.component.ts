@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import { SkillsComponent } from './skills/skills.component';
 import { NgForOf } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-my-skills',
   standalone: true,
   imports: [
     SkillsComponent,
-    NgForOf
+    NgForOf,
+    TranslateModule
   ],
   templateUrl: './my-skills.component.html',
   styleUrl: './my-skills.component.scss'

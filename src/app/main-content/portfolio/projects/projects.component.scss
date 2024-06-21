@@ -4,20 +4,21 @@
     @include dFlex($g: 12.8rem);
     margin-top: 20rem;
     .description_container {
+        min-width: 300px;
         .text_wrapper {
             max-width: 50rem;
             h3 {
-                font-size: 3.2rem;
+                font-size: 32px;
                 font-weight: 700;
-                color: #4B47FF;
+                color: $purple;
             }
             h4 {
-                font-size: 2.3rem;
+                font-size: 23px;
                 font-weight: 400;
-                color: #00BEE8;
+                color: $light_blue;
             }
             p {
-                font-size: 1.6rem;
+                font-size: 16px;
             }
         }
         .button_wrapper {
@@ -31,15 +32,15 @@
                 &:hover {
                     margin: 0 -1rem -1rem -1rem;
                     padding: 2rem 4rem;
-                    background-color: #00BEE8;
+                    background-color: $light_blue;
                 }
             }
             :first-child {
-                background-color: #4B47FF;
+                background-color: $purple;
             }
             :nth-child(2) {
                 background-color: transparent;
-                border: 0.1rem solid #00BEE8;
+                border: 0.1rem solid $light_blue;
             }
         }
     }
@@ -61,6 +62,94 @@
         }
         .button_wrapper {
             @include dFlex($jc: flex-end, $g: 8.6rem);
+        }
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .project > img {
+            width: 360px;
+        }
+}
+
+@media screen and (max-width: 850px) {
+
+    .project {
+        @include dFlex($fd: column, $g: 6.4rem);
+        img {
+            width: auto;
+        }
+        .description_container > .button_wrapper > a {
+            font-size: 23px;
+            padding: 15px 30px;
+            border-radius: 10px;
+            &:hover {
+                margin: 0 -10px -10px -10px;
+                padding: 20px 40px;
+            }
+        }
+        .text_right {
+            width: 80%;
+            // , $jc: center
+            .text_wrapper {
+                @include dFlex($fd: column, $g: 1.6rem);
+                max-width: 100%;
+                text-align: center;
+            }
+            .button_wrapper {
+                @include dFlex($jc: center, $g: 8.6rem);
+            }
+        }
+        .text_left {
+            width: 80%;
+            .text_wrapper {
+                @include dFlex($fd: column, $g: 1.6rem);
+                max-width: 100%;
+                text-align: center;
+            }
+            .button_wrapper {
+                @include dFlex($jc: center, $g: 8.6rem);
+            }
+        }
+    }
+
+    .img_left {
+        display: block !important;
+    }
+
+    .img_right {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .project {
+        img {
+            width: 300px;
+        }
+        .description_container {
+            .text_wrapper {
+                max-width: 300px;
+                h3 {
+                    font-size: 24px;
+                }
+                h4 {
+                    font-size: 17px;
+                }
+                p {
+                    font-size: 12px;
+                }
+            }
+            .button_wrapper > a {
+                font-size: 16px;
+                padding: 10.5px 21px;
+                border-radius: 7px;
+                &:hover {
+                    margin: 0 -7px -7px -7px;
+                    padding: 14px 28px;
+                }
+            }
         }
     }
 }
