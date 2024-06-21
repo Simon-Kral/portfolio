@@ -248,6 +248,40 @@ input[type=checkbox] {
     }
 }
 
+#notification {
+    display: none;
+    position: absolute;
+    top: 50%;
+    padding: 20px 40px;
+    border-radius: 10px;
+    border: 2px solid whitesmoke;
+    box-shadow: 0px 0px 8px whitesmoke;
+    background-color: $dark_blue;
+    animation: slideInAndOut 3s;
+    span {
+        font-size: 16px;
+    }
+}
+
+@keyframes slideInAndOut {
+    0%,
+    30%,
+    70%,
+    75%,
+    100% {
+        top: 120%;
+    }
+    30% {
+        top: 50%;
+    }
+    70% {
+        top: 50%;
+    }
+    0% {
+        top: 120%;
+    }
+}
+
 @media screen and (max-width: 600px) {
 
     .submit_wrapper {
