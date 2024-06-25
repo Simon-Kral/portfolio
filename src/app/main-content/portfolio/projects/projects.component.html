@@ -1,5 +1,8 @@
 <div class="project" data-aos="fade-up" data-aos-offset='250'>
-    <img src="{{ img }}" class="img_left" [ngClass]="{'d_none': this.isOdd(i)}">
+    <div class="img_wrapper img_left" [ngClass]="{'d_none': this.isOdd(i)}">
+        <div class="buffer_container"></div>
+        <img src="{{ img }}">
+    </div>
     <div class="description_container" [ngClass]="{'text_right': this.isEven(i), 'text_left': this.isOdd(i)}">
         <div class="text_wrapper">
             <h3>{{ title }}</h3>
@@ -7,9 +10,12 @@
             <p>{{ generatePath(path) | translate }}</p>
         </div>
         <div class="button_wrapper">
-            <a href="{{ url }}" target="_blank">Live test</a>
-            <a href="{{ github }}" target="_blank">Github</a>
+            <a href="{{ url }}" target="_blank" class="buttons">Live test</a>
+            <a href="{{ github }}" target="_blank" class="buttons">Github</a>
         </div>
     </div>
-    <img src="{{ img }}" class="img_right" [ngClass]="{'d_none': this.isEven(i)}">
+    <div class="img_wrapper img_right" [ngClass]="{'d_none': this.isEven(i)}">
+        <img src="{{ img }}">
+        <div class="buffer_container"></div>
+    </div>
 </div>

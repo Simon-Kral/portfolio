@@ -1,5 +1,12 @@
 @import './../styles.scss';
 
+
+.content_wrapper {
+    min-height: 100vh;
+    @include dFlex($fd: column, $jc: space-between, $ai: flex-start);
+    overflow-x: hidden;
+}
+
 .rotate_message {
     position: relative;
     display: none;
@@ -21,10 +28,10 @@
     }
 }
 
-@media (max-height: 600px) and (orientation: landscape) {
+@media (max-height: 500px) and (orientation: landscape) {
 
     .content_wrapper {
-        display: none;
+        display: none;        
     }
 
     .rotate_message {

@@ -28,6 +28,12 @@
     }
 }
 
+.projects_wrapper {
+    @include dFlex($fd: column, $g: 28rem);
+    margin-top: 20rem;
+    padding: 0 100px;
+}
+
 h2 {
     font-size: 16px;
     font-weight: 400;
@@ -35,15 +41,21 @@ h2 {
 }
 
 .separator_line {
-    @include separatorLine();
     border-radius: 2px 0 0 2px;
 }
 
+@media screen and (max-width: 850px) {
 
-@media screen and (max-width: 800px) {
+    .head_wrapper > .portfolio_head > .headline_wrapper > .separator_line {
+        width: 5rem;
+        min-width: 0;
+    }
     h2 {
+        font-size: 12px;
         transform: translateX(0);
-        padding: 20px;
+    }
+    .projects_wrapper {
+        padding: 0 20px;
     }
 }
 
@@ -55,16 +67,6 @@ h2 {
     }
     h2 {
         font-size: 12px;
-    }
-
-    .separator_line {
-        min-width: 20px;
-    }
-}
-
-@media screen and (max-width: 450px) {
-    
-    .separator_line {
-        min-width: 50px;
+        padding: 0 20px;
     }
 }

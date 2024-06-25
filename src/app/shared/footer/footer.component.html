@@ -1,23 +1,27 @@
 <div class="separator_line"></div>
-<footer>
-    <nav>
-        <a href="#">
-            <img src="assets/img/name.png" alt="" class="back_to_top">
+<div class="footer_wrapper">
+    <div class="buffer_container"></div>
+    <footer>
+        <nav>
+            <a href="#" class="underline_animation">
+                <img src="assets/img/name.png" alt="" class="back_to_top">
+            </a>
+            <span>&#169; Simon Kral 2024</span>
+            <div class="social_wrapper">
+                <a href="https://github.com/Simon-Kral" class="social_button" target="_blank">
+                    <img src="./assets/img/github.png" alt="">
+                </a>
+                <a href="#contact" class="social_button">
+                    <img src="./assets/img/contact.png" alt="">
+                </a>
+                <a href="https://www.linkedin.com/in/simon-kral-0732a1282/" class="social_button" target="_blank">
+                    <img src="./assets/img/linkedIn.png" alt="">
+                </a>
+            </div>
+        </nav>
+        <a href="imprint" class="underline_animation imprint">
+            <span>{{ 'footer.imprint' | translate }}</span>
         </a>
-        <span>&#169; Simon Kral 2024</span>
-        <div class="social_wrapper">
-            <a href="https://github.com/Simon-Kral" class="social_button" target="_blank">
-                <img src="./assets/img/github.png" alt="">
-            </a>
-            <a href="#contact" class="social_button">
-                <img src="./assets/img/contact.png" alt="">
-            </a>
-            <a href="https://www.linkedin.com/in/simon-kral-0732a1282/" class="social_button" target="_blank">
-                <img src="./assets/img/linkedIn.png" alt="">
-            </a>
-        </div>
-    </nav>
-    <a href="imprint" class="underline_animation imprint">
-        <span>{{ 'footer.imprint' | translate }}</span>
-    </a>
-</footer>
+    </footer>
+    <div class="buffer_container"></div>
+</div>

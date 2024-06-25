@@ -50,12 +50,36 @@ a {
   font-size: 23px;
 }
 
+.buttons {
+    font-size: 23px;
+    color: whitesmoke;
+    border: none;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.1s;
+    &:hover {
+        padding: 20px 40px;
+        margin: 0 -10px -10px -10px;
+    }
+}
+
 img {
     image-rendering: high-quality;
 }
 
+.separator_line {
+    @include separatorLine();
+}
+
 .buffer_container {
     flex-grow: 1;
+    min-width: 100px;
+}
+
+.show_mobile {
+    display: none;
 }
 
 
@@ -200,6 +224,25 @@ nav {
     }
     .show_mobile {
         display: block !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .separator_line {
+        min-width: 20px;
+    }
+
+    .buffer_container {
+        min-width: 20px;
+    }
+    .buttons {
+        font-size: 16px;
+        padding: 10.5px 21px;
+        border-radius: 7px;
+        &:hover {
+            margin: 0 -7px -7px -7px;
+            padding: 14px 28px;
+        }
     }
 }
 

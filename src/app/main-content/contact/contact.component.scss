@@ -1,7 +1,7 @@
 @import './../../../styles.scss';
 
 :host {
-    @include dFlex($ai: flex-start);
+    @include dFlex($ai: flex-start, $g: 4.2rem);
     padding: 27.8rem 0 12.8rem 0;
     position: inherit;
     z-index: 6;
@@ -9,14 +9,13 @@
 
 section {
     @include dFlex($fd: column);
-    max-width: 144rem;
+    max-width: 192rem;
     .header_wrapper {
         @include dFlex($jc: space-between);
         width: 100%;
         margin-bottom: 9rem;
         h1 {
             font-size: 9rem;
-            max-width: 60rem;
             flex-grow: 1;
         }
         div {
@@ -25,10 +24,10 @@ section {
         }
     }
     .contact_content {
-        @include dFlex($jc: space-between, $ai: flex-start);
+        @include dFlex($jc: space-between, $ai: flex-start, $g: 6.4rem);
+        width: 100%;
         .description_container {
             @include dFlex($fd: column, $ai: flex-start, $g: 3.2rem);
-            max-width: 60rem;
             h2 {
                 font-size: 3.2rem;
             }
@@ -95,21 +94,18 @@ section {
     @include dFlex();
     margin-bottom: 5rem;
     button[type=submit] {
-      background-color: $light_blue;
-      color: white;
-      padding: 1.5rem 3rem;
-      border: none;
-      border-radius: 1rem;
-      cursor: pointer;
-      font-size: 2.3rem;
-      transition: all 0.1s;
-      &:enabled:hover {
-        padding: 2rem 4rem;
-        margin: 0 -1rem -1rem -1rem;
-    }
-      &:disabled {
-        background-color: #B6B6B6;
-      }
+        background-color: $light_blue;
+        &:enabled:hover {
+            padding: 20px 40px;
+            margin: 0 -10px -10px -10px;
+        }
+        &:disabled {
+            background-color: #B6B6B6;
+            &:hover {
+                margin: 0;
+                padding: 15px 30px;
+            }
+        }
     }
 }
 
@@ -169,14 +165,13 @@ input[type=checkbox] {
 }
 
 .separator_line {
-    @include separatorLine();
-    margin-right: 32px;
-    margin-top: 6.5rem;
     border-radius: 0 2px 2px 0;
+    margin-top: 6.4rem;
+    min-width: calc(100px - 4.2rem);
 }
 
 .buffer_container {
-    min-width: 100px;
+    min-width: calc(100px - 4.2rem);
 }
 
 .error_message {
@@ -189,18 +184,6 @@ input[type=checkbox] {
     
     section > .contact_content {
         @include dFlex($fd: column, $ai: flex-start, $g: 6.4rem);
-    }
-
-    .submit_wrapper {
-        button[type=submit] {
-            font-size: 23px;
-            padding: 15px 30px;
-            border-radius: 10px;
-            &:enabled:hover {
-                margin: 0 -10px -10px -10px;
-                padding: 20px 40px;
-            }
-        }
     }
 }
 
@@ -229,20 +212,27 @@ input[type=checkbox] {
     
     .submit_wrapper {
         button[type=submit] {
-            font-size: 16px;
-            padding: 10.5px 21px;
-            border-radius: 7px;
             &:enabled:hover {
                 margin: 0 -7px -7px -7px;
                 padding: 14px 28px;
+            }
+            &:disabled {
+                background-color: #B6B6B6;
+                &:hover {
+                    margin: 0;
+                    padding: 10.5px 21px;
+                }
             }
         }
     }
 
     .separator_line {
+        border-radius: 0 2px 2px 0;
+        margin-top: 6.4rem;
+        margin-right: 0;
         min-width: 20px;
     }
-
+    
     .buffer_container {
         min-width: 20px;
     }
@@ -286,5 +276,17 @@ input[type=checkbox] {
 
     .submit_wrapper {
         margin-bottom: 15rem;
+    }
+}
+
+@media screen and (max-width: 850px) {
+
+    .separator_line {
+        min-width: 20px;
+        margin-right: 0;
+    }
+
+    .buffer_container {
+        min-width: 20px;
     }
 }

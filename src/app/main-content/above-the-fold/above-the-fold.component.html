@@ -1,8 +1,11 @@
 <div class="buffer_container"></div>
 <section class="aot_main">
     <div class="selfie_container">
-        <img src="./assets/img/shadows/shadow5.png" alt="" class="shadow">
-        <img src="./assets/img/me.png" alt=""> 
+        <img src="./assets/img/shadows/shadow5.png" class="shadow">
+        <img src="./assets/img/me.png" class="me">
+        <div class="frame show_mobile">
+            <img src="./assets/img/frames/frame1.png" alt="">
+        </div>
     </div>    <div class="i_am_container">
         <div class="healine_wrapper">
             <h3 [ngClass]="{'german': languageService.language == 'de'}">{{ 'atf.iam' | translate }}</h3>
@@ -11,9 +14,9 @@
                 <h2>FRONTEND DEVELOPER</h2>
             </div>
         </div>
-        <a href="#contact">{{ 'atf.talk' | translate }}</a>
+        <a href="#contact" class="buttons">{{ 'atf.talk' | translate }}</a>
     </div>
-    <div class="frame">
+    <div class="frame hide_mobile">
         <img src="./assets/img/frames/frame1.png" alt="">
     </div>
 </section>

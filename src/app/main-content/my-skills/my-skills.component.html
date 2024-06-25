@@ -3,13 +3,13 @@
     <div class="skill_list" data-aos="fade-right">
         <app-skills *ngFor="let entry of skillList; let i = index" [icon]="skillList[i].icon" [skill]="skillList[i].skill"></app-skills>
     </div>
-    <div class="text_wrapper" data-aos="fade-right">
+    <div class="text_wrapper" data-aos="fade-left">
         <h1>{{ 'mySkills.header' | translate }}</h1>
         <p>{{ 'mySkills.description' | translate }}</p>
-        <a href="#contact" class="hide_mobile">{{ 'mySkills.contact' | translate }}</a>
+        <a href="#contact" class="hide_mobile buttons">{{ 'mySkills.contact' | translate }}</a>
     </div>
-    <div class="d_none contact_button">
-        <a href="#contact">{{ 'mySkills.contact' | translate }}</a>
+    <div class="show_mobile contact_button">
+        <a href="#contact" class="buttons">{{ 'mySkills.contact' | translate }}</a>
     </div>
 </section>
 <div class="separator_line"></div>

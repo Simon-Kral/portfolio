@@ -9,14 +9,12 @@
 
 
 section {
-    @include dFlex($jc: space-between);
+    @include dFlex($jc: space-between, $g: 6.4rem);
     .text_wrapper {
         @include dFlex($fd: column,$ai: flex-start, $g: 3.5rem);
         max-width: 128rem;
-        padding: 0 6.4rem;
         h1 {
             font-size: 9rem;
-            line-height: 10.8rem;
             text-wrap: nowrap;
         }
         p {
@@ -35,7 +33,6 @@ section {
 }
 
 .separator_line {
-    @include separatorLine();
     background-color: $light_blue;
 }
 

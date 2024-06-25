@@ -1,6 +1,7 @@
+<div class="buffer_container"></div>
 <header>
     <nav>
-        <a href="#" (click)="handleAnchor()">
+        <a href="#" (click)="handleAnchor()" class="underline_animation">
             <img src="assets/img/name.png" alt="" class="back_to_top">
         </a>
         <div class="nav_links hide_mobile">
@@ -12,11 +13,12 @@
                 <span>|</span>
                 <a [ngClass]="{'selected_animation': languageService.language == 'de'}" (click)="languageService.switchLanguage('de')">DE</a></div>
         </div>
-        <a class="burger_menu d_none show_mobile" (click)="mobileMenuIsOpen = !mobileMenuIsOpen">
+        <a class="burger_menu show_mobile" (click)="mobileMenuIsOpen = !mobileMenuIsOpen">
             <img src="./../../../assets/img/burger_menu.png" alt="">
         </a>
     </nav>
 </header>
+<div class="buffer_container"></div>
 <div class="overlay" [ngClass]="{'showMenu': mobileMenuIsOpen}">
     <div class="nav_links">
         <a href="#about_me" class="underline_animation" (click)="handleAnchor()">{{ 'header.aboutme' | translate }}</a>

@@ -61,7 +61,6 @@ export class ContactComponent {
 
   notificateUser() {
     this.notificate = true;
-    console.info('send post complete');
     setTimeout(() => {this.notificate = false}, 3000);
   }
 }

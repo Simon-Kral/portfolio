@@ -3,8 +3,8 @@
 :host {
     @include dFlex();
     width: 100%;
-    z-index: 10;
-    position: sticky;
+    z-index: 99;
+    position: fixed;
     top: 0;
     background-color: $dark_blue;
 }
@@ -14,10 +14,14 @@ header {
     max-width: 192rem;
     nav {
         height: $header_height;
-        padding: 40px 100px;
+        padding: 40px 0;
         @include dFlex($jc: space-between);
         .back_to_top {
-            height: 35px;
+            height: 42px;
+            transition: all 0.1s;
+            &:hover {
+            filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.4));
+            }
         }
         .nav_links {
             display: flex;
@@ -89,11 +93,5 @@ header {
 @media screen and (max-width: 850px) {
     .showMenu {
         @include dFlex();
-    }
-}
-
-@media screen and (max-width: 600px) {
-    header > nav {
-        padding: 40px 40px;
     }
 }

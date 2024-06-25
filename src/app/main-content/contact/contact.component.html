@@ -11,7 +11,7 @@
             <p>{{ 'contact.subtext' | translate }} <b>{{ 'contact.subtextBold' | translate }}</b></p>
         </div>
         <div class="form_container" data-aos="fade-up">
-            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" autocomplete="off">
                 <div class="form_element_wrapper">
                     <input [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="{{ 'contact.name' | translate }}" required #name="ngModel" [ngClass]="{'invalid': !name.valid && name.touched, 'valid': name.valid && name.touched}">
                     @if (!name.valid && name.touched) {
@@ -40,7 +40,7 @@
                     }
                     </div>
                 <div class="submit_wrapper">
-                    <button type="submit" [disabled]="!agree">{{ 'contact.sendButton' | translate }}</button>
+                    <button type="submit" [disabled]="!agree" class="buttons">{{ 'contact.sendButton' | translate }}</button>
                 </div>
             </form>
             <a href="#" class="go_up"><span>↑</span></a>
