@@ -1,0 +1,178 @@
+:host {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.shadow {
+    position: absolute;
+    z-index: 3;
+}
+
+.one {
+    top: 16%;
+    right: -40rem;
+}
+
+.three_1 {
+    top: 40%;
+    left: -50rem;
+    transform: rotate(-180deg) scaleX(-1);
+}
+
+.nine {
+    top: 54%;
+    left: -30rem;
+}
+
+.three_2 {
+    top: 72%;
+    right: -50rem;
+    rotate: 90deg;
+}
+
+.eight {
+    top: 88%;
+    left: -10rem;
+    transform: rotate(160deg);
+}
+
+@media screen and (max-width: 1920px) {
+    .one {
+        top: 12%;
+    }
+    
+    .three_1 {
+        top: 32%;
+    }
+    
+    .nine {
+        top: 45%;
+    }
+    
+    .three_2 {
+        top: 70%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .three_1 {
+        left: -70rem;
+    }
+    .nine {
+        left: -50rem;
+    }
+    .three_2 {
+        right: -70rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .one {
+        top: 14%;
+        right: -70rem;
+    }
+    .three_1 {
+        top: 35%;
+        left: -100rem;
+    }
+    .nine {
+        top: 45%;
+        left: -80rem;
+    }
+    .three_2 {
+        top: 70%;
+        right: -100rem;
+    }
+    .eight {
+        top: 90%;
+        left: -15rem;
+    }
+}
+
+@media screen and (max-width: 850px) {
+
+    .one {
+        width: 400px;
+        top: 15%;
+        right: -40rem;
+    }
+    .three_1 {
+        width: 400px;
+        top: 32%;
+        left: -35rem;
+    }
+    .nine {
+        width: 400px;
+        top: 46%;
+        left: -10rem;
+    }
+    .three_2 {
+        width: 400px;
+        top: 80%;
+        right: -30rem;
+    }
+    .eight {
+        width: 400px;
+        top: 94%;
+        left: -10rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .one {
+        top: 17%;
+    }
+    .three_1 {
+        top: 35%;
+    }
+    .nine {
+        top: 46%;
+    }
+    .three_2 {
+        top: 76%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .three_1 {
+        top: 34%;
+        left: -40rem;
+    }
+    .nine {
+        top: 48%;
+    }
+    .three_2 {
+        top: 78%;
+        right: -40rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .one {
+        width: 300px;
+        right: -30rem;
+    }
+    .three_1 {
+        width: 300px;
+        left: -35rem;
+    }
+    .nine {
+        width: 300px;
+        top: 47%;
+    }
+    .three_2 {
+        width: 300px;
+        top: 79%;
+        right: -40rem;
+    }
+    .eight {
+        width: 300px;
+    }
+}
