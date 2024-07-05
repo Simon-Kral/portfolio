@@ -1,66 +1,77 @@
 import { NgClass, NgStyle } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
-import { FormsModule, NgForm } from '@angular/forms';
+import {
+	FormBuilder,
+	FormControl,
+	ReactiveFormsModule,
+	Validators,
+} from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-contact',
-  standalone: true,
-  imports: [
-    FormsModule,
-    NgClass,
-    TranslateModule,
-    NgStyle
-  ],
-  templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+	selector: 'app-contact',
+	standalone: true,
+	imports: [ReactiveFormsModule, NgClass, TranslateModule, NgStyle],
+	templateUrl: './contact.component.html',
+	styleUrl: './contact.component.scss',
 })
 export class ContactComponent {
-  http = inject(HttpClient);
-  mailTest = false;
-  agree = false;
-  notificate = false;
-  contactData = {
-    name: "",
-    email: "",
-    message: "",
-  }
+	fb = inject(FormBuilder);
+	http = inject(HttpClient);
+	mailTest = false;
+	agree = false;
+	notificate = false;
+	contactData = {
+		name: '',
+		email: '',
+		message: '',
+	};
 
-  post = {
-    endPoint: 'https://simon-kral.de/sendMail.php',
-    body: (payload: any) => JSON.stringify(payload),
-    options: {
-      headers: {
-        'Content-Type': 'text/plain',
-        responseType: 'text',
-      },
-    },
-  };
+	contactForm = this.fb.nonNullable.group({
+		name: ['', [Validators.required, Validators.minLength(3)]],
+		email: ['', [Validators.required, Validators.email]],
+		message: ['', [Validators.required, Validators.minLength(3)]],
+		privacy: [false, Validators.requiredTrue],
+	});
 
-  onSubmit(ngForm: NgForm) {
-    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
-      this.http.post(this.post.endPoint, this.post.body(this.contactData))
-        .subscribe({
-          next: (response) => {
+	post = {
+		endPoint: 'https://simon-kral.de/sendMail.php',
+		body: (payload: any) => JSON.stringify(payload),
+		options: {
+			headers: {
+				'Content-Type': 'text/plain',
+				responseType: 'text',
+			},
+		},
+	};
 
-            ngForm.resetForm();
-          },
-          error: (error) => {
-            console.error(error);
-          },
-          complete: () => this.notificateUser(),
-        });
-    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+	onSubmit() {
+		if (this.contactForm.valid && !this.mailTest) {
+			this.http
+				.post(this.post.endPoint, this.post.body(this.contactData))
+				.subscribe({
+					next: (response) => {
+						this.contactForm.reset();
+					},
+					error: (error) => {
+						console.error(error);
+					},
+					complete: () => this.notificateUser(),
+				});
+		} else if (this.contactForm.valid && this.mailTest) {
+			this.contactForm.reset();
+		}
+	}
 
-      ngForm.resetForm();
-    } else {
-      ngForm.form.markAllAsTouched();
-    }
-  }
+	notificateUser() {
+		this.notificate = true;
+		setTimeout(() => {
+			this.notificate = false;
+		}, 3000);
+	}
 
-  notificateUser() {
-    this.notificate = true;
-    setTimeout(() => {this.notificate = false}, 3000);
-  }
+	formInvalid(formControl: FormControl<string> | FormControl<boolean>) {
+		return formControl.invalid && formControl.touched;
+	}
 }

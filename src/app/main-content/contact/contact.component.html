@@ -1,53 +1,117 @@
 <div class="separator_line" data-aos="fade-right"></div>
 <section>
-    <div class="header_wrapper" data-aos="fade-right">
-        <h1>{{ 'contact.header' | translate }}</h1>
-        <div></div>
-    </div>
-    <div class="contact_content">
-        <div class="description_container" data-aos="fade-right">
-            <h2>{{ 'contact.subline' | translate }}</h2>
-            <p>{{ 'contact.description' | translate }}</p>
-            <p>{{ 'contact.subtext' | translate }} <b>{{ 'contact.subtextBold' | translate }}</b></p>
-        </div>
-        <div class="form_container" data-aos="fade-up">
-            <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" autocomplete="off">
-                <div class="form_element_wrapper">
-                    <input [(ngModel)]="contactData.name" type="text" id="name" name="name" placeholder="{{ 'contact.name' | translate }}" required #name="ngModel" [ngClass]="{'invalid': !name.valid && name.touched, 'valid': name.valid && name.touched}">
-                    @if (!name.valid && name.touched) {
-                        <span class="error_message">{{ 'contact.errorName' | translate }}</span>
-                    }
-                </div>
-                <div class="form_element_wrapper">
-                    <input [(ngModel)]="contactData.email" type="email" id="email" name="email" placeholder="{{ 'contact.mail' | translate }}" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" #email="ngModel" [ngClass]="{'invalid': !email.valid && email.touched, 'valid': email.valid && email.touched}">
-                    @if (!email.valid && email.touched) {
-                        <span class="error_message">{{ 'contact.errorMail' | translate }}</span>
-                    }
-                </div>
-                <div class="form_element_wrapper">
-                    <textarea [(ngModel)]="contactData.message" minlength="4" id="message" name="message" placeholder="{{ 'contact.message' | translate }}" required #message="ngModel" [ngClass]="{'invalid': !message.valid && message.touched, 'valid': message.valid && message.touched}"></textarea>
-                    @if (!message.valid && message.touched) {
-                    <span class="error_message">{{ 'contact.errorMessage' | translate }}</span>
-                    }
-                </div>
-                <div class="form_element_wrapper">
-                    <div class="ckeckbox_wrapper">
-                        <input [(ngModel)]="agree" type="checkbox" id="checkbox" name="checkbox" required #checkbox="ngModel">
-                        <span>{{ 'contact.privacyText1' | translate }}<a href="privacy">{{ 'contact.privacyLink' | translate }}</a>{{ 'contact.privacyText2' | translate }}</span>
-                    </div>
-                    @if (!checkbox.valid && checkbox.touched) {
-                        <span class="error_message">{{ 'contact.errorPrivacy' | translate }}</span>
-                    }
-                    </div>
-                <div class="submit_wrapper">
-                    <button type="submit" [disabled]="!agree" class="buttons">{{ 'contact.sendButton' | translate }}</button>
-                </div>
-            </form>
-            <a href="#" class="go_up"><span>↑</span></a>
-        </div>
-    </div>
+	<div class="header_wrapper" data-aos="fade-right">
+		<h1>{{ "contact.header" | translate }}</h1>
+		<div></div>
+	</div>
+	<div class="contact_content">
+		<div class="description_container" data-aos="fade-right">
+			<h2>{{ "contact.subline" | translate }}</h2>
+			<p>{{ "contact.description" | translate }}</p>
+			<p>
+				{{ "contact.subtext" | translate }}
+				<b>{{ "contact.subtextBold" | translate }}</b>
+			</p>
+		</div>
+		<div class="form_container" data-aos="fade-up">
+			<form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+				<div class="form_element_wrapper">
+					<input
+						type="text"
+						placeholder="{{ 'contact.name' | translate }}"
+						autocomplete="off"
+						formControlName="name"
+						[ngClass]="{
+							invalid: formInvalid(contactForm.controls.name),
+							valid: contactForm.controls.name.valid
+						}"
+					/>
+					@if (formInvalid(contactForm.controls.name)) { @if
+					(contactForm.controls.name.errors?.['required']) {
+					<p class="error_message">
+						{{ "contact.errorNameRequired" | translate }}
+					</p>
+					} @if (contactForm.controls.name.errors?.['minlength']) {
+					<p class="error_message">
+						{{ "contact.errorNameLength" | translate }}
+					</p>
+					} }
+				</div>
+				<div class="form_element_wrapper">
+					<input
+						type="text"
+						placeholder="{{ 'contact.mail' | translate }}"
+						formControlName="email"
+						[ngClass]="{
+							invalid: formInvalid(contactForm.controls.email),
+							valid: contactForm.controls.email.valid
+						}"
+					/>
+					@if (formInvalid(contactForm.controls.email)) { @if
+					(contactForm.controls.email.errors?.['required']) {
+					<p class="error_message">
+						{{ "contact.errorMailRequired" | translate }}
+					</p>
+					} @if (contactForm.controls.email.errors?.['email']) {
+					<p class="error_message">
+						{{ "contact.errorMailMail" | translate }}
+					</p>
+					} }
+				</div>
+				<div class="form_element_wrapper">
+					<textarea
+						type="text"
+						placeholder="{{ 'contact.message' | translate }}"
+						formControlName="message"
+						[ngClass]="{
+							invalid: formInvalid(contactForm.controls.message),
+							valid: contactForm.controls.message.valid
+						}"
+					></textarea>
+					@if (formInvalid(contactForm.controls.message)) { @if
+					(contactForm.controls.message.errors?.['required']) {
+					<p class="error_message">
+						{{ "contact.errorMessageRequired" | translate }}
+					</p>
+					} @if (contactForm.controls.message.errors?.['minlength']) {
+					<p class="error_message">
+						{{ "contact.errorMessageLength" | translate }}
+					</p>
+					} }
+				</div>
+				<div class="form_element_wrapper">
+					<div class="ckeckbox_wrapper">
+						<input type="checkbox" formControlName="privacy" />
+						<span
+							>{{ "contact.privacyText1" | translate
+							}}<a href="privacy">{{
+								"contact.privacyLink" | translate
+							}}</a
+							>{{ "contact.privacyText2" | translate }}</span
+						>
+					</div>
+					@if (formInvalid(contactForm.controls.privacy)) { @if
+					(contactForm.controls.privacy.errors?.['required']) {
+					<p class="error_message">
+						{{ "contact.errorPrivacy" | translate }}
+					</p>
+					} }
+				</div>
+				<div class="submit_wrapper">
+					<button
+						type="submit"
+						[disabled]="!contactForm.valid"
+						class="buttons"
+					>
+						{{ "contact.sendButton" | translate }}
+					</button>
+				</div>
+			</form>
+			<a href="#" class="go_up"><span>↑</span></a>
+		</div>
+	</div>
 </section>
 <div class="buffer_container"></div>
-<div id="notification" [ngStyle]="{display: notificate ? 'block' : 'none'}">
-    <span>{{ 'contact.notification' | translate }}</span>
+<div id="notification" [ngStyle]="{ display: notificate ? 'block' : 'none' }">
+	<span>{{ "contact.notification" | translate }}</span>
 </div>
