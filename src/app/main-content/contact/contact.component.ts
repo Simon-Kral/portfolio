@@ -20,13 +20,7 @@ export class ContactComponent {
 	fb = inject(FormBuilder);
 	http = inject(HttpClient);
 	mailTest = false;
-	agree = false;
 	notificate = false;
-	contactData = {
-		name: '',
-		email: '',
-		message: '',
-	};
 
 	contactForm = this.fb.nonNullable.group({
 		name: ['', [Validators.required, Validators.minLength(3)]],
@@ -49,9 +43,12 @@ export class ContactComponent {
 	onSubmit() {
 		if (this.contactForm.valid && !this.mailTest) {
 			this.http
-				.post(this.post.endPoint, this.post.body(this.contactData))
+				.post(
+					this.post.endPoint,
+					this.post.body(this.contactForm.getRawValue())
+				)
 				.subscribe({
-					next: (response) => {
+					next: () => {
 						this.contactForm.reset();
 					},
 					error: (error) => {
