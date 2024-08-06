@@ -28,7 +28,8 @@
 			"join": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
 			"ringOfFire": "Angular based webapp of the popular card game with firebase integration.",
 			"elPolloLoco": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
-			"pokedex": "Based on the PokeAPI a simple library that provides and catalogues pokemon information."
+			"pokedex": "Based on the PokeAPI a simple library that provides and catalogues pokemon information.",
+			"da-bubble": "A Slack clone app that offers seamless team communication and collaboration through messaging, file sharing, and customizable channels for workplace efficiency."
 		}
 	},
 	"contact": {
