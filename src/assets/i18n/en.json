@@ -11,14 +11,14 @@
 
 	"aboutMe": {
 		"header": "About me",
-		"description": "Hello, I am Simon Kral from Reudelsterz, Germany. As a frontend developer, I create innovative web applications with creative design. Solving complex problems to lead exciting projects to success is a particular thrill for me. I take great pleasure in learning new concepts and continuously expanding my skills.",
+		"description": "Hello, I am Simon Kral from Reudelsterz, Germany. As a web developer, I create innovative applications with creative design. Solving complex problems to lead exciting projects to success is a particular thrill for me. I take great pleasure in learning new concepts and continuously expanding my skills.",
 		"characteristics1": "With unconventional ideas I develop efficient solutions for complex problems. The mix of creativity and a structured approach makes programming varied and challenging, which motivates me anew every day.",
 		"characteristics2": "Solved problems are puzzle pieces to me that come together to form completed projects on one hand and my experience as a developer on the other hand. In doing so, I pay close attention to the careful assembly of matching pieces to achieve a refined result."
 	},
 
 	"mySkills": {
 		"header": "My skills",
-		"description": "I have grown my frontend developments skills that have allowed me to create different real projects.",
+		"description": "I have grown my skills as a developer that have allowed me to create many real projects.",
 		"contact": "Get in touch"
 	},
 
@@ -29,7 +29,8 @@
 			"ringOfFire": "Angular based webapp of the popular card game with firebase integration.",
 			"elPolloLoco": "Jump, run and throw game based on object-oriented approach. Help Pepe to find coins and tabasco salsa to fight against the crazy hen.",
 			"pokedex": "Based on the PokeAPI a simple library that provides and catalogues pokemon information.",
-			"da-bubble": "A Slack clone app that offers seamless team communication and collaboration through messaging, file sharing, and customizable channels for workplace efficiency."
+			"daBubble": "A Slack clone app that offers seamless team communication and collaboration through messaging, file sharing, and customizable channels for workplace efficiency.",
+			"coderr": "A Freelancer-Platform where Business-Users can offer services and customers can order them and write a review."
 		}
 	},
 	"contact": {

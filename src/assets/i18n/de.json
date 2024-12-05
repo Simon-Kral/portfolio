@@ -11,14 +11,14 @@
 
 	"aboutMe": {
 		"header": "Über mich",
-		"description": "Hallo, ich bin Simon Kral aus Reudelsterz. Als Frontend-Entwickler erzeuge ich innovative Webanwendungen mit kreativem Design. Komplexe Probleme zu lösen, um spannende Projekte zum Erfolg zu führen, ist für mich ein besonderer Reiz. Dabei bereitet es mir große Freude, neue Konzepte zu erlernen und meine Fähigkeiten kontinuierlich auszubauen.",
+		"description": "Hallo, ich bin Simon Kral aus Reudelsterz. Als Web-Entwickler erzeuge ich innovative Anwendungen mit kreativem Design. Komplexe Probleme zu lösen, um spannende Projekte zum Erfolg zu führen, ist für mich ein besonderer Reiz. Dabei bereitet es mir große Freude, neue Konzepte zu erlernen und meine Fähigkeiten kontinuierlich auszubauen.",
 		"characteristics1": "Mit unkonventionellen Ideen entwickle ich effiziente Lösungen für komplexe Probleme. Die Mischung aus Kreativität und strukturiertem Vorgehen macht das Programmieren abwechslungsreich und anspruchsvoll, was mich jeden Tag aufs Neue antreibt.",
 		"characteristics2": "Ich sehe die gelösten Probleme als Puzzleteile, aus denen sich zum Einen fertige Projekte und zum Anderen meine Erfahrung als Entwickler zusammensetzen. Dabei achte ich auf sorgfältiges Zusammensetzen passender Teile, um ein ausgereiftes Ergebnis zu erhalten."
 	},
 
 	"mySkills": {
 		"header": "Fähigkeiten",
-		"description": "Ich habe meine Kenntnisse als Entwickler ausgebaut, was mir die Umsetzung verschiedener realer Projekte ermöglicht hat.",
+		"description": "Ich habe meine Kenntnisse als Entwickler ausgebaut, was mir die Umsetzung vieler realer Projekte ermöglicht hat.",
 		"contact": "In Kontakt treten"
 	},
 
@@ -29,7 +29,8 @@
 			"ringOfFire": "Angular-basierte Web-App des beliebten Kartenspiels mit Firebase-Integration.",
 			"elPolloLoco": "Ein einfaches Jump-and-Run-Spiel, das auf einem objektorientierten Ansatz basiert. Hilf Pepe, Münzen und Salsaflaschen zu finden, um gegen das Killerhuhn zu kämpfen.",
 			"pokedex": "Basierend auf der PokeAPI ist dies eine einfache Bibliothek, die Pokémon-Informationen bereitstellt und katalogisiert.",
-			"da-bubble": "Eine Slack-Klon-App, die nahtlose Teamkommunikation und -zusammenarbeit durch Nachrichten, Dateifreigabe und anpassbare Kanäle für effizientes Arbeiten bietet."
+			"daBubble": "Eine Slack-Klon-App, die nahtlose Teamkommunikation und -zusammenarbeit durch Nachrichten, Dateifreigabe und anpassbare Kanäle für effizientes Arbeiten bietet.",
+			"coderr": "Eine Freelancer-Platform, auf der Geschäftsnutzer Ihre Dienste anbieten und Kunden diese bestellen und Rezensionen verfassen können."
 		}
 	},
 	"contact": {

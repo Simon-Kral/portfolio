@@ -13,20 +13,28 @@ import { TranslateModule } from '@ngx-translate/core';
 export class PortfolioComponent {
 	projectList = [
 		{
-			title: 'DA-Bubble',
-			path: 'da-bubble',
-			type: 'Angular | Typescript | HTML | SCSS | Firebase',
-			img: './assets/img/da-bubble.png',
-			url: 'http://da-bubble.simon-kral.de/',
-			github: 'https://github.com/Simon-Kral/da-bubble',
+		  title: "Coderr",
+		  path: "coderr",
+		  type: "JavaScript | Django | Python ",
+		  img: "./assets/img/coderr.png",
+		  url: "http://coderr.simon-kral.de/",
+		  github: "https://github.com/Simon-Kral/Coderr-Backend",
 		},
 		{
 			title: 'Join',
 			path: 'join',
-			type: 'JavaScript | HTML | CSS',
+			type: 'Angular | Typescript | Django | Python',
 			img: './assets/img/join.png',
 			url: 'http://join.simon-kral.de/',
 			github: 'https://www.github.com/Simon-Kral/join',
+		},
+		{
+			title: 'DA-Bubble',
+			path: 'daBubble',
+			type: 'Angular | Typescript | Firebase',
+			img: './assets/img/da_bubble.png',
+			url: 'http://da-bubble.simon-kral.de/',
+			github: 'https://github.com/Simon-Kral/da-bubble',
 		},
 		{
 			title: 'El Pollo Loco',
