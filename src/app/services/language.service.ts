@@ -6,7 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class LanguageService {
 
-  language: string = 'en';
+  language: string = 'de';
 
   constructor(public translateService: TranslateService, private translate: TranslateService) { }
 

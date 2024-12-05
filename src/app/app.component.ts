@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
 
   public constructor(private titleService: Title,translate: TranslateService ) {
     this.setTitle('Simon Kral');
-    translate.setDefaultLang('en');
+    translate.setDefaultLang('de');
   }
   
   ngOnInit(): void {
